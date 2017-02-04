@@ -4,11 +4,15 @@ class Tree:
     def __init__(self):
         self.root = NullNode(self)
 
-    def add(self, value):
-        self.root.add(value)
+    def add(self, key, value):
+        self.root.add(key, value)
+        return self
 
-    def grow(self, value):
-        self.root = Node(self, value)
+    def search(self, key):
+        return self.root.search(key)
+
+    def grow(self, key, value):
+        self.root = Node(self, key, value)
 
     def get_list(self):
         return self.root.get_list()
